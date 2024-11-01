@@ -8,6 +8,7 @@ namespace FiorellaTask.Models
 	{
         [Required]
         public string Name { get; set; }
+        public ICollection<ProductCategories> ProductCategories { get; set; }
 
         //public ICollection<Course> Courses { get; set; }
     }
