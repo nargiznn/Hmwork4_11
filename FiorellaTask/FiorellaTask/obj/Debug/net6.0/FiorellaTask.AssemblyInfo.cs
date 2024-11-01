@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FiorellaTask")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e154ddfd7363e90b5c2dd6940d14c15bd179af73")]
 [assembly: System.Reflection.AssemblyProductAttribute("FiorellaTask")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FiorellaTask")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
