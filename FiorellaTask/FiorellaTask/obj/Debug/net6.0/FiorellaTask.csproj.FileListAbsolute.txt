@@ -65,5 +65,4 @@
 /Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/obj/Debug/net6.0/FiorellaTask.pdb
 /Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/obj/Debug/net6.0/FiorellaTask.genruntimeconfig.cache
 /Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/obj/Debug/net6.0/ref/FiorellaTask.dll
-/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/obj/Debug/net6.0/FiorellaTask.sourcelink.json
-/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/obj/Debug/net6.0/Fiorella.165F547D.Up2Date
+/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/obj/Debug/net6.0/FiorellaTask.csproj.CopyComplete

@@ -4,6 +4,7 @@ using FiorellaTask.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FiorellaTask.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241101152412_CategoriesTableUpdate")]
+    partial class CategoriesTableUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,23 +23,6 @@ namespace FiorellaTask.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("FiorellaTask.Models.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-                });
 
             modelBuilder.Entity("FiorellaTask.Models.Product", b =>
                 {
@@ -67,19 +52,18 @@ namespace FiorellaTask.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("FiorellaTask.Models.ProductImages", b =>
@@ -109,15 +93,9 @@ namespace FiorellaTask.Migrations
 
             modelBuilder.Entity("FiorellaTask.Models.ProductCategories", b =>
                 {
-                    b.HasOne("FiorellaTask.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
-
                     b.HasOne("FiorellaTask.Models.Product", "Product")
-                        .WithMany()
+                        .WithMany("Categories")
                         .HasForeignKey("ProductId");
-
-                    b.Navigation("Category");
 
                     b.Navigation("Product");
                 });
@@ -133,6 +111,8 @@ namespace FiorellaTask.Migrations
 
             modelBuilder.Entity("FiorellaTask.Models.Product", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Images");
                 });
 #pragma warning restore 612, 618

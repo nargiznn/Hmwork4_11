@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using FiorellaTask.Models;
 
 namespace FiorellaTask.Models
 {
@@ -7,7 +8,10 @@ namespace FiorellaTask.Models
 	{
         [Required]
         public string Name { get; set; }
+
         //public ICollection<Course> Courses { get; set; }
     }
 }
+
+
 

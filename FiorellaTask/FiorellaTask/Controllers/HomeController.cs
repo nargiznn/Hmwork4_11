@@ -22,14 +22,15 @@ namespace FiorellaTask.Controllers
 
         public async Task<IActionResult> Index()
         {
-
             return View(new HomeVM
             {
-                Categories = await _context.Categories.ToListAsync()
-
+                Categories = await _context.Categories.ToListAsync(),
+                Products = await _context.Products.ToListAsync(),
+                ProductImages = await _context.ProductImages.ToListAsync(), 
+                ProductCategories = await _context.ProductCategories.ToListAsync()
             });
-
         }
+
     }
 }
 

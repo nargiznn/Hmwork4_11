@@ -69,134 +69,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="popular">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-14-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="popular">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-13-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
+                @foreach (var item in Model.Products)
+                {
+                    <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+                        <div class="product-item text-center" data-id="popular">
+                            <div class="img">
+                                <a href="">
+                                    <img src="~/assets/img/@item.Images.FirstOrDefault(m=>m.IsMain)?.Image" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="title mt-3">
+                                <h6>@item.Name</h6>
+                            </div>
+                            <div class="price">
+                                <span class="text-black-50">Add to cart</span>
+                                <span class="text-black-50">$@item.Price</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="winter">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-12-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="winter">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-11-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="various">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-10-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="various">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-9-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="exotic">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-8-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                    <div class="product-item text-center" data-id="exotic">
-                        <div class="img">
-                            <a href="">
-                                <img src="~/assets/img/shop-7-img.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="title mt-3">
-                            <h6>MAJESTY PALM</h6>
-                        </div>
-                        <div class="price">
-                            <span class="text-black-50">Add to cart</span>
-                            <span class="text-black-50">$259</span>
-                        </div>
-                    </div>
-                </div>
+
+                }
+
             </div>
         </div>
     </section>
