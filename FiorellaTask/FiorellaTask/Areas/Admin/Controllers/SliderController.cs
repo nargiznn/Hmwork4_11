@@ -15,9 +15,12 @@ namespace FiorellaTask.Areas.Admin.Controllers
     public class SliderController : Controller
     {
         private readonly AppDbContext _context;
-        public SliderController(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+
+        public SliderController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         [HttpGet]
@@ -38,6 +41,40 @@ namespace FiorellaTask.Areas.Admin.Controllers
 
             return View(sliderImage);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Slider request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            if (request.Photo == null)
+            {
+                ModelState.AddModelError("Photo", "Please upload an image.");
+                return View();
+            }
+            string fileName = Guid.NewGuid().ToString() + "_" + request.Photo.FileName;
+            string path = Path.Combine(_env.WebRootPath, "assets/img", fileName);
+            using (FileStream stream = new(path, FileMode.Create))
+            {
+                await request.Photo.CopyToAsync(stream);
+            }
+            var slider = new Slider { Image = fileName };
+            await _context.Sliders.AddAsync(slider);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 
 }

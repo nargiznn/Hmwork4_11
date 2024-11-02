@@ -1,0 +1,34 @@
+﻿@model SliderWords
+
+<div class="container mt-5">
+    <h1 class="text-center">Slider Words</h1>
+    <div class="create-area">
+        <a asp-action="Create" class="btn btn-success">Create</a>
+    </div>
+    <div class="table-responsive pt-3 mt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <td>
+                        <img src="~/assets/img/@Model.Image" style="width:150px;height:100px" alt="image">
+                    </td>
+                    <td>@Model.Title</td>
+                    <td>@Model.Desc</td>
+                    <td>
+                        <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-outline-primary">Detail</a>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Edit</a>
+                        <button type="button" data-id="@Model.Id" class="btn btn-outline-danger delete-category">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

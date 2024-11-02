@@ -1,0 +1,11 @@
+﻿@model Slider
+
+<div class="container mt-5">
+    <h3 class="text-center">Create new slider image</h3>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <input asp-for="Photo" class="form-control mt-5" type="file">
+        <span class="text-danger d-block" asp-validation-for="Photo"></span>
+        <button type="submit" class="btn btn-success mr-2 mt-3">Submit</button>
+        <a asp-action="Index" class="btn btn-primary mx-2 mt-3">Cancel</a>
+    </form>
+</div>

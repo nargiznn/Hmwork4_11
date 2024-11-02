@@ -44,12 +44,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/Slider/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2xpZGVyL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/Slider/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2xpZGVyL0RldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/Slider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2xpZGVyL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/SliderWords/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2xpZGVyV29yZHMvRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/SliderWords/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvQWRtaW4vVmlld3MvU2xpZGVyV29yZHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/_ViewImports.cshtml]
