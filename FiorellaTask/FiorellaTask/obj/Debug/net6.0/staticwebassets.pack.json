@@ -7457,10 +7457,6 @@
       "PackagePath": "staticwebassets/assets/img/62500845-1e2a-4ea7-8eb1-111ca97b66e2_arayis.JPG"
     },
     {
-      "Id": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/becd6f7d-48a7-4b9c-94f1-20b24f2791ec_blog-1.jpg",
-      "PackagePath": "staticwebassets/assets/img/becd6f7d-48a7-4b9c-94f1-20b24f2791ec_blog-1.jpg"
-    },
-    {
       "Id": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/blog-feature-img-1.jpg",
       "PackagePath": "staticwebassets/assets/img/blog-feature-img-1.jpg"
     },
@@ -7471,6 +7467,10 @@
     {
       "Id": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/blog-feature-img-4.jpg",
       "PackagePath": "staticwebassets/assets/img/blog-feature-img-4.jpg"
+    },
+    {
+      "Id": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/c2d607b2-306c-4cfc-91f6-0c6cbc8eb1cd_blog-big-3.jpg",
+      "PackagePath": "staticwebassets/assets/img/c2d607b2-306c-4cfc-91f6-0c6cbc8eb1cd_blog-big-3.jpg"
     },
     {
       "Id": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/favicon.png",

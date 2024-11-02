@@ -121,6 +121,22 @@ namespace FiorellaTask.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var sliderWords = await _context.SliderWords.FindAsync(id);
+
+            if (sliderWords == null)
+            {
+                return NotFound();
+            }
+            string existPath = Path.Combine(_env.WebRootPath, "assets/img", sliderWords.Image);
+            DeleteFile(existPath);
+            _context.SliderWords.Remove(sliderWords);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
         private void DeleteFile(string path)
         {
