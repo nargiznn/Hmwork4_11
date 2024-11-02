@@ -1,0 +1,26 @@
+﻿@model Product
+
+<div class="container mt-5">
+    <h2>Product Details</h2>
+    <h3>Id: @Model.Id</h3>
+    <h3>Name: @Model.Name</h3>
+    <h3>Price:$@Model.Price</h3>
+
+    <h4>Categories:</h4>
+    <ul>
+        @foreach (var category in Model.ProductCategories)
+        {
+            <li>@category.Category.Name</li>
+        }
+    </ul>
+
+    <h4>Images:</h4>
+    <div class="product-images">
+        @foreach (var image in Model.Images)
+        {
+            <img src="~/assets/img/@image.Image" alt="Product Image" style="width: 200px; height: auto; margin-right: 10px;" />
+        }
+    </div>
+
+    <a asp-action="Index" class="btn btn-primary mt-3">Back to Products</a>
+</div>

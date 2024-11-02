@@ -5,8 +5,8 @@ namespace FiorellaTask.Models
 	{
         public string Name { get; set; }
         public double Price { get; set; }
-        public ICollection<ProductImages> Images { get; set; }
-        public ICollection<ProductCategories> ProductCategories { get; set; }
+        public ICollection<ProductImages> Images { get; set; } = new List<ProductImages>();
+        public ICollection<ProductCategories> ProductCategories { get; set; } = new List<ProductCategories>();
     }
 }
 

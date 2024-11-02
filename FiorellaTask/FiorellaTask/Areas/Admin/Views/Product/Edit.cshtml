@@ -1,0 +1,46 @@
+﻿@model Product
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name">Product Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price">Product Price</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <h4>Select Images:</h4>
+        <input type="file" name="productPhotos" multiple class="form-control" />
+    </div>
+
+    <h4>Select Categories:</h4>
+    @foreach (var category in ViewBag.Categories)
+    {
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="selectedCategories" value="@category.Id"
+                   @(Model.ProductCategories.Any(pc => pc.CategoryId == category.Id) ? "checked" : "") />
+            <label class="form-check-label">@category.Name</label>
+        </div>
+    }
+
+    <h4>Current Images:</h4>
+    @if (Model.Images != null && Model.Images.Count > 0)
+    {
+        foreach (var image in Model.Images)
+        {
+            <div>
+                <img src="@Url.Content("~/assets/img/" + image.Image)" alt="Product Image" style="width: 100px; height: auto;" />
+                <input type="checkbox" name="removeImages" value="@image.Image" /> Remove
+            </div>
+        }
+    }
+
+
+    <button type="submit" class="btn btn-primary mt-3">Update Product</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Cancel</a>
+</form>

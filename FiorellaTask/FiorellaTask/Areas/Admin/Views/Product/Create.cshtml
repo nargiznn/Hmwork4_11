@@ -1,0 +1,40 @@
+﻿@model Product
+<form asp-action="Create" method="post" enctype="multipart/form-data" class="p-4 bg-light rounded shadow-sm">
+    <h3 class="mb-4">Create New Product</h3>
+
+    <div class="form-group mb-3">
+        <label asp-for="Name" class="form-label">Product Name</label>
+        <input asp-for="Name" class="form-control" placeholder="Enter product name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Price" class="form-label">Product Price ($)</label>
+        <input asp-for="Price" class="form-control" placeholder="Enter product price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-4">
+        <label class="form-label">Product Images</label>
+        <input type="file" name="productPhotos" multiple class="form-control" />
+        <small class="form-text text-muted">You can upload multiple images.</small>
+    </div>
+
+    <div class="form-group mb-4">
+        <h5 class="mb-2">Select Categories</h5>
+        <div class="d-flex flex-wrap gap-2">
+            @foreach (var category in ViewBag.Categories)
+            {
+                <div class="form-check me-3">
+                    <input class="form-check-input" type="checkbox" name="selectedCategories" value="@category.Id" id="category_@category.Id" />
+                    <label class="form-check-label" for="category_@category.Id">@category.Name</label>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-primary">Create Product</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

@@ -2,21 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.FiorellaTask PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FiorellaTask/Areas/Admin/Controllers/CategoryController.cs">
-    <Files>
-      <File FileName="FiorellaTask/Areas/Admin/Views/Slider/Detail.cshtml" Line="1" Column="1" />
-      <File FileName="FiorellaTask/Areas/Admin/Views/Slider/Index.cshtml" Line="25" Column="1" />
-      <File FileName="FiorellaTask/Areas/Admin/Views/Product/Index.cshtml" Line="26" Column="39" />
-      <File FileName="FiorellaTask/Areas/Admin/Controllers/CategoryController.cs" Line="55" Column="1" />
-      <File FileName="FiorellaTask/ViewModels/HomeVM.cs" Line="17" Column="1" />
-      <File FileName="FiorellaTask/Views/Home/Index.cshtml" Line="1" Column="1" />
-      <File FileName="FiorellaTask/Areas/Admin/Views/Category/Index.cshtml" Line="7" Column="1" />
-      <File FileName="FiorellaTask/Areas/Admin/Views/Category/Create.cshtml" Line="7" Column="1" />
-      <File FileName="FiorellaTask/Areas/Admin/Controllers/SliderController.cs" Line="1" Column="1" />
-      <File FileName="FiorellaTask/Program.cs" Line="24" Column="1" />
-      <File FileName="FiorellaTask/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="FiorellaTask/Models/Category.cs" Line="17" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -24,20 +10,16 @@
             <Node name="FiorellaTask">
               <Node name="Areas">
                 <Node name="Admin">
-                  <Node name="Controllers">
-                    <Node name="CategoryController.cs" selected="True" />
-                  </Node>
                   <Node name="Views">
-                    <Node name="Category" expanded="True" />
+                    <Node name="Product">
+                      <Node name="Index.cshtml" selected="True" />
+                    </Node>
+                    <Node name="Slider" expanded="True" />
                   </Node>
                 </Node>
               </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -45,13 +27,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/Category/Create.cshtml" relfile="FiorellaTask/Areas/Admin/Views/Category/Create.cshtml" line="3" column="1" />
-      <Breakpoint file="/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/Category/Create.cshtml" relfile="FiorellaTask/Areas/Admin/Views/Category/Create.cshtml" line="1" column="1" />
-      <Breakpoint file="/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Views/Category/Index.cshtml" relfile="FiorellaTask/Areas/Admin/Views/Category/Index.cshtml" line="6" column="1" />
-      <Breakpoint file="/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Controllers/CategoryController.cs" relfile="FiorellaTask/Areas/Admin/Controllers/CategoryController.cs" line="37" column="1" />
-      <Breakpoint file="/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/Areas/Admin/Controllers/CategoryController.cs" relfile="FiorellaTask/Areas/Admin/Controllers/CategoryController.cs" line="44" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
