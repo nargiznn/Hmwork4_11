@@ -18,7 +18,8 @@
                 {
                     <tr>
                         <th>
-                                <img src="~/assets/img/@item.Images.FirstOrDefault(m=>m.IsMain)" alt="Main Product Image" style="width:100px;height:100px;" />
+                            @*<img src="~/assets/img/@item.Images.FirstOrDefault(m=>m.IsMain)" alt="Main Product Image" style="width:100px;height:100px;" />*@
+                            <img src="~/assets/img/@item.Images.FirstOrDefault(m=>m.IsMain).Image" style="width:150px;height:100px" alt="image">
 
                         </th>
                         <th>
