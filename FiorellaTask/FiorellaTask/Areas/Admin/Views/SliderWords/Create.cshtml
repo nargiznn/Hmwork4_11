@@ -1,0 +1,18 @@
+﻿@model SliderWords
+
+<div class="container mt-5">
+    <h3 class="text-center">Create new Slider Words</h3>
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <input asp-for="SliderPhoto" class="form-control mt-5" type="file">
+        <span class="text-danger d-block" asp-validation-for="SliderPhoto"></span>
+
+        <input type="text" asp-for="Title" class="form-control mt-5" id="categoryInput" placeholder="Enter new title ">
+        <span class="text-danger d-block" asp-validation-for="Title"></span>
+
+        <input type="text" asp-for="Desc" class="form-control mt-5" id="categoryInput" placeholder="Enter new desc ">
+        <span class="text-danger d-block" asp-validation-for="Desc"></span>
+
+        <button type="submit" class="btn btn-success mr-2 mt-3">Submit</button>
+        <a asp-action="Index" class="btn btn-primary mx-2 mt-3">Cancel</a>
+    </form>
+</div>

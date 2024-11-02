@@ -15,13 +15,13 @@ namespace FiorellaTask.Areas.Admin.Controllers
     public class SliderWordsController : Controller
     {
         private readonly AppDbContext _context;
-        public SliderWordsController(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+
+        public SliderWordsController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
-        // GET: /<controller>/
-
-
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -38,6 +38,42 @@ namespace FiorellaTask.Areas.Admin.Controllers
             if (sliderImage is null) return NotFound();
 
             return View(sliderImage);
+        }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(SliderWords request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            if (request.SliderPhoto == null)
+            {
+                ModelState.AddModelError("Photo", "Please upload an image.");
+                return View();
+            }
+            string fileName = Guid.NewGuid().ToString() + "_" + request.SliderPhoto.FileName;
+            string path = Path.Combine(_env.WebRootPath, "assets/img", fileName);
+            using (FileStream stream = new(path, FileMode.Create))
+            {
+                await request.SliderPhoto.CopyToAsync(stream);
+            }
+            var sliderWords = new SliderWords
+            {
+                Title = request.Title,  
+                Desc = request.Desc,   
+                Image = fileName        
+            };
+            await _context.SliderWords.AddAsync(sliderWords);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -28,8 +28,8 @@ namespace FiorellaTask.Controllers
                 Products = await _context.Products.ToListAsync(),
                 ProductImages = await _context.ProductImages.ToListAsync(), 
                 ProductCategories = await _context.ProductCategories.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(), 
-                SliderWords = await _context.SliderWords.FirstOrDefaultAsync()
+                Sliders = await _context.Sliders.ToListAsync(),
+                SliderWords = await _context.SliderWords.OrderByDescending(sw => sw.Id).FirstOrDefaultAsync()
             });
         }
 
