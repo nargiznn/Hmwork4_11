@@ -22,12 +22,14 @@ namespace FiorellaTask.Areas.Admin.Controllers
             _context = context;
             _env = env;
         }
+
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            SliderWords sliders = await _context.SliderWords.FirstOrDefaultAsync();
+            IEnumerable<SliderWords> sliders = await _context.SliderWords.OrderByDescending(m => m.Id).ToListAsync();
             return View(sliders);
         }
+
         [HttpGet]
         public async Task<IActionResult> Detail(int? id)
         {
@@ -74,6 +76,58 @@ namespace FiorellaTask.Areas.Admin.Controllers
             await _context.SliderWords.AddAsync(sliderWords);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id is null) return BadRequest();
+
+            SliderWords sliderImage = await _context.SliderWords.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (sliderImage is null) return NotFound();
+
+            return View(sliderImage);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? id, SliderWords request) 
+        {
+            if (id is null) return BadRequest();
+
+            SliderWords sliderImage = await _context.SliderWords.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (sliderImage is null) return NotFound();
+
+            if (request.SliderPhoto != null) 
+            {
+                string existPath = Path.Combine(_env.WebRootPath, "assets/img", sliderImage.Image);
+                DeleteFile(existPath);
+                string newFileName = Guid.NewGuid().ToString() + "_" + request.SliderPhoto.FileName;
+                string newPath = Path.Combine(_env.WebRootPath, "assets/img", newFileName);
+
+                using (FileStream stream = new(newPath, FileMode.Create))
+                {
+                    await request.SliderPhoto.CopyToAsync(stream);
+                }
+
+                sliderImage.Image = newFileName; 
+            }
+
+            sliderImage.Title = request.Title; 
+            sliderImage.Desc = request.Desc;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        private void DeleteFile(string path)
+        {
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
         }
     }
 }

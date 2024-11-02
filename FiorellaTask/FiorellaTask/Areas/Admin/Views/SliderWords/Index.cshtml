@@ -1,4 +1,4 @@
-﻿@model SliderWords
+﻿@model List<SliderWords>
 
 <div class="container mt-5">
     <h1 class="text-center">Slider Words</h1>
@@ -15,20 +15,24 @@
                     <th>Options</th>
                 </tr>
             </thead>
-            <tbody class="text-center">
-                <tr>
-                    <td>
-                        <img src="~/assets/img/@Model.Image" style="width:150px;height:100px" alt="image">
-                    </td>
-                    <td>@Model.Title</td>
-                    <td>@Model.Desc</td>
-                    <td>
-                        <a asp-action="Detail" asp-route-id="@Model.Id" class="btn btn-outline-primary">Detail</a>
-                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-secondary">Edit</a>
-                        <button type="button" data-id="@Model.Id" class="btn btn-outline-danger delete-category">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
+            @foreach (var item in Model)
+            {
+                <tbody class="text-center">
+                    <tr>
+                        <td>
+                            <img src="~/assets/img/@item.Image" style="width:150px;height:100px" alt="image">
+                        </td>
+                        <td>@item.Title</td>
+                        <td>@item.Desc</td>
+                        <td>
+                            <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-outline-primary">Detail</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-secondary">Edit</a>
+                            <button type="button" data-id="@item.Id" class="btn btn-outline-danger delete-category">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+
+            }
         </table>
     </div>
 </div>
