@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WyUgiWBQgJ9u3Brz+t+yxxn9nRsxqWkz2D5P+ZC8Nsw=",
+  "Hash": "SHlAoiTI6uHfrCv/Rjpj6NMyIHVu6NNAQPWN3pSeCi4=",
   "Source": "FiorellaTask",
   "BasePath": "_content/FiorellaTask",
   "Mode": "Default",
@@ -31669,6 +31669,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/css/style.css.map"
+    },
+    {
+      "Identity": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/62500845-1e2a-4ea7-8eb1-111ca97b66e2_arayis.JPG",
+      "SourceId": "FiorellaTask",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/",
+      "BasePath": "_content/FiorellaTask",
+      "RelativePath": "assets/img/62500845-1e2a-4ea7-8eb1-111ca97b66e2_arayis.JPG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/img/62500845-1e2a-4ea7-8eb1-111ca97b66e2_arayis.JPG"
     },
     {
       "Identity": "/Users/nergiznadirli/Desktop/AspNet/Homeworks/Hmwork_7/FiorellaTask/FiorellaTask/wwwroot/assets/img/blog-feature-img-1.jpg",

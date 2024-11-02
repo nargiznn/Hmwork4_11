@@ -39,21 +39,21 @@ namespace FiorellaTask.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Category category)
         {
             if (!ModelState.IsValid) return View(category);
-
             bool hasCategory = await _context.Categories.AnyAsync(m => m.Name.Trim() == category.Name.Trim());
             if (hasCategory)
             {
                 ModelState.AddModelError("Name", "Category already exists!");
                 return View(category);
             }
-
             await _context.Categories.AddAsync(new Category { Name = category.Name });
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
@@ -61,7 +61,6 @@ namespace FiorellaTask.Areas.Admin.Controllers
             _context.Categories.Remove(existProduct);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
         }
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
@@ -84,11 +83,9 @@ namespace FiorellaTask.Areas.Admin.Controllers
                 ModelState.AddModelError("Name", "Category already exists!");
                 return View(category);
             }
-
             existCategory.Name = category.Name;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-
         }
     }
 }

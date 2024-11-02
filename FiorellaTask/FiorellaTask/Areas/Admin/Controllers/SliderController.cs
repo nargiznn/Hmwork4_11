@@ -73,6 +73,74 @@ namespace FiorellaTask.Areas.Admin.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id is null) return BadRequest();
+
+            Slider sliderImage = await _context.Sliders.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (sliderImage is null) return NotFound();
+
+            return View(new Slider { Image = sliderImage.Image, Id = sliderImage.Id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int? id, Slider request)
+        {
+            if (id is null) return BadRequest();
+
+            Slider sliderImage = await _context.Sliders.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (sliderImage is null) return NotFound();
+
+            if (request.Photo != null)
+            {
+                string existPath = Path.Combine(_env.WebRootPath, "assets/img", sliderImage.Image);
+                DeleteFile(existPath);
+
+                string newFileName = Guid.NewGuid().ToString() + "_" + request.Photo.FileName;
+                string newPath = Path.Combine(_env.WebRootPath, "assets/img", newFileName);
+
+                using (FileStream stream = new(newPath, FileMode.Create))
+                {
+                    await request.Photo.CopyToAsync(stream);
+                }
+
+                sliderImage.Image = newFileName;
+
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var sliderImage = await _context.Sliders.FindAsync(id);
+
+            if (sliderImage == null)
+            {
+                return NotFound();
+            }
+
+            string existPath = Path.Combine(_env.WebRootPath, "assets/img", sliderImage.Image);
+            DeleteFile(existPath);
+
+            _context.Sliders.Remove(sliderImage);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        private void DeleteFile(string path)
+        {
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+        }
 
 
     }
