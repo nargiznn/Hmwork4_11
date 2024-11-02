@@ -9,7 +9,8 @@ namespace FiorellaTask.ViewModels
         public List<Product> Products { get; set; }
         public List<ProductCategories> ProductCategories { get; set; }
         public List<ProductImages> ProductImages { get; set; }
-
+        public List<Slider> Sliders { get; set; }
+        public SliderWords SliderWords { get; set; }
     }
 }
 

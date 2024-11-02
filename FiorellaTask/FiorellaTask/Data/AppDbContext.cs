@@ -10,6 +10,8 @@ namespace FiorellaTask.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductImages> ProductImages { get; set; }
         public DbSet<ProductCategories> ProductCategories { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
+        public DbSet<SliderWords> SliderWords { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> option) : base(option) { }
     }
 }

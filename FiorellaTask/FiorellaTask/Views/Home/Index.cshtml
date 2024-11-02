@@ -7,9 +7,11 @@
 
     <section id="slider">
         <div class="owl-carousel slider">
-            <div> <img src="~/assets/img/h3-slider-background.jpg" alt=""> </div>
-            <div> <img src="~/assets/img/h3-slider-background-2.jpg" alt=""> </div>
-            <div> <img src="~/assets/img/h3-slider-background-3.jpg" alt=""> </div>
+            @foreach (var item in Model.Sliders)
+            {
+                <div> <img src="~/assets/img/@item.Image" alt=""> </div>
+            }
+
         </div>
         <div class="container context pl-lg-5 ml-lg-3">
             <div class="row">
@@ -18,12 +20,11 @@
                         <h1>Send <span>flowers</span> like</h1>
                         <h1>you mean it</h1>
                         <p class="text-black-50 d-none d-sm-block">
-                            Where flowers are our inspiration to create lasting memories. Whatever the occasion, our flowers will
-                            make it special cursus a sit amet mauris.
+                           @Model.SliderWords.Desc
                         </p>
-                    </div>
+                    </div> 
                     <div class="img">
-                        <img src="~/assets/img/h2-sign-img.png" alt="">
+                        <img src="~/assets/img/@Model.SliderWords.Image" alt="">
                     </div>
                 </div>
             </div>

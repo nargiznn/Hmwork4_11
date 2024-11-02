@@ -27,7 +27,9 @@ namespace FiorellaTask.Controllers
                 Categories = await _context.Categories.ToListAsync(),
                 Products = await _context.Products.ToListAsync(),
                 ProductImages = await _context.ProductImages.ToListAsync(), 
-                ProductCategories = await _context.ProductCategories.ToListAsync()
+                ProductCategories = await _context.ProductCategories.ToListAsync(),
+                Sliders = await _context.Sliders.ToListAsync(), 
+                SliderWords = await _context.SliderWords.FirstOrDefaultAsync()
             });
         }
 

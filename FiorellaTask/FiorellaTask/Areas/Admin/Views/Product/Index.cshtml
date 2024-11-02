@@ -2,9 +2,6 @@
 <div class="container mt-3">
 
     <h1 class="text-center">Products</h1>
-    <div class="create-area">
-        <a asp-action="Create" class="btn btn-success">Create</a>
-    </div>
     <div class="table-responsive pt-3 mt-5">
         <table class="table">
             <thead class="thead-dark">
@@ -21,7 +18,7 @@
                 {
                     <tr>
                         <th>
-                          Image
+                                <img src="~/assets/img/@item.Images.FirstOrDefault(m=>m.IsMain)" alt="Main Product Image" style="width:100px;height:100px;" />
 
                         </th>
                         <th>

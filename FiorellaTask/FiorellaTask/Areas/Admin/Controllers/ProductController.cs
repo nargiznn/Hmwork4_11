@@ -25,8 +25,9 @@ namespace FiorellaTask.Areas.Admin.Controllers
         {
             IEnumerable<Product> products = await _context.Products
                 .OrderByDescending(m => m.Id)
-                .Include(m => m.ProductCategories) 
-                    .ThenInclude(pc => pc.Category) 
+                .Include(m => m.ProductCategories)
+                    .ThenInclude(pc => pc.Category)
+                .Include(m => m.Images) 
                 .ToListAsync();
             return View(products);
         }

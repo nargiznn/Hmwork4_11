@@ -1,17 +1,41 @@
 ﻿<Properties StartupConfiguration="{E0F2C952-586E-49C9-9BCB-3BF6DDFB8C7C}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.FiorellaTask FirstBuild="True" PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.FiorellaTask PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FiorellaTask/appsettings.Development.json">
+    <Files>
+      <File FileName="FiorellaTask/Areas/Admin/Views/Product/Index.cshtml" />
+      <File FileName="FiorellaTask/Models/Product.cs" />
+      <File FileName="FiorellaTask/Models/ProductImages.cs" />
+      <File FileName="FiorellaTask/Areas/Admin/Controllers/ProductController.cs" Line="15" Column="20" />
+      <File FileName="FiorellaTask/Data/AppDbContext.cs" Line="1" Column="1" />
+      <File FileName="FiorellaTask/appsettings.Development.json" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="FiorellaTask" expanded="True">
             <Node name="FiorellaTask">
-              <Node name="wwwroot" expanded="True">
-                <Node name="assets" selected="True" />
+              <Node name="Areas" expanded="True">
+                <Node name="Admin" expanded="True">
+                  <Node name="Controllers" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Category" expanded="True" />
+                    <Node name="Product" expanded="True" />
+                    <Node name="Shared" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True">
+                <Node name="appsettings.Development.json" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -19,6 +43,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
